@@ -492,7 +492,10 @@ class TagListCommand(Command):
         Command.__init__(self, **kwargs)
 
     def apply(self, ui):
-        tags = ui.dbman.get_all_tags()
+        tags = settings.get('my_tag_list')
+        if len(tags) == 0:
+            tags = ui.dbman.get_all_tags()
+
         blists = ui.get_buffers_of_type(buffers.TagListBuffer)
         if blists:
             buf = blists[0]

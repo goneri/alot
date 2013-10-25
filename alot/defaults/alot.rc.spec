@@ -212,6 +212,10 @@ mailinglists = force_list(default=list())
 # prefer plaintext alternatives over html content in multipart/alternative
 prefer_plaintext = boolean(default=False)
 
+# taglist default is to show up all the tags. Here the user
+# can choose the list of tags to use instead.
+my_tag_list = force_list(default=list())
+
 # Key bindings 
 [bindings]
     __many__ = string(default=None)
